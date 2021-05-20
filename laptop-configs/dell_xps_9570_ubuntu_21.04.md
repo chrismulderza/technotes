@@ -36,7 +36,7 @@ $ sudo reboot now
 ## Install software required to finish configuring:
 
 ```bash
-$ sudo apt install -y mc vim vim-editorconfig sysfsutils hwinfo powertop tlp tlp-rdw acpica-tools buildah podman skopeo wavemon
+$ sudo apt install -y mc vim vim-editorconfig sysfsutils hwinfo powertop tlp tlp-rdw acpica-tools buildah podman skopeo wavemon xkeycaps
 ```
 
 ## Fix console and grub font sizes
@@ -208,15 +208,26 @@ Reload `udev` rules:
 $ sudo udevadm control --reload
 ```
 
-## Configure Software Tools
+## Remap caps lock to control (Optional)
 
-### Git
+I tend to do console work in `tmux`. Remapping the (useless) caps lock key to another control key reduces finger gymnastics.
 
-Setup global git username details:
+For gnome you can use:
 
 ```bash
-$ git config --global user.name "John Doe"
-$ git config --global user.name "jdoe@example.com"
+$ gsettings set org.gnome.desktop.input-sources xkb-options "['caps:ctrl_modifier']"
 ```
 
+While the preferred way for X is now:
 
+```bash
+setxkbmap -option caps:ctrl_modifier
+```
+
+## Install NVidia proprietary driver(s)
+
+Install the latest stable (460) driver:
+
+```bash
+$ sudo apt install nvidia-driver-460
+```

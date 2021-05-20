@@ -251,3 +251,7 @@ $ cat /sys/kernel/debug/dri/0/gt/uc/huc_info
 $ modinfo -p i915
 $ systool -m i915 -av
 ```
+
+## References
+
+[Fedora Workstation 33 with btrfs-luks full disk encryption](https://mutschler.eu/linux/install-guides/fedora-btrfs/)
